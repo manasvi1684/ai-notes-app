@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5001",
+  baseURL: "https://ai-notes-app-4thb.onrender.com",
   headers: {
     "Content-Type": "application/json"
   }
