@@ -1,13 +1,23 @@
 import { useState } from "react";
 import CreateNote from "./components/CreateNote";
 import NotesList from "./components/NotesList";
+import LandingPage from "./components/LandingPage";
 
 const App = () => {
   const [refreshKey, setRefreshKey] = useState(0);
+  const [showLanding, setShowLanding] = useState(true);
 
   const refreshNotes = () => {
     setRefreshKey((prev) => prev + 1);
   };
+
+  const enterApp = () => {
+    setShowLanding(false);
+  };
+
+  if (showLanding) {
+    return <LandingPage onEnter={enterApp} />;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50/50">
